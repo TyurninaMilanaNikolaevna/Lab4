@@ -38,7 +38,8 @@ public class TestingApp {
 
         final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(
                 flow,
-                ConnectHttp.toHost()
+                ConnectHttp.toHost("localhost", 8080),
+                
         )
 
     }

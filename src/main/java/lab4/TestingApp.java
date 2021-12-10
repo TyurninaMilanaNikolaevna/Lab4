@@ -60,10 +60,9 @@ public class TestingApp {
                                     = Patterns.ask(RouterActor, new GetRequest(id), Timeout.durationToTimeout(5));
                             return completeOKWithFutute(result, Jackson.marshaller());
                         })),
-                )
                 post(
 
-                )
+                );
         );
     }
 

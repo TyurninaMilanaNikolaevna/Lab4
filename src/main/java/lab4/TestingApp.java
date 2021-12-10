@@ -19,6 +19,7 @@ import akka.stream.javadsl.Flow;
 import akka.util.Timeout;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.concurrent.CompletionStage;
 import java.util.regex.Pattern;
 
@@ -57,7 +58,7 @@ public class TestingApp {
                 get(
                         () -> parameter("packageId", (id) -> {
                             Future<Object> result
-                                    = Patterns.ask(RouterActor, new GetRequest(id), Timeout.durationToTimeout(5));
+                                    = Patterns.ask(RouterActor, new GetRequest(id), Timeout.create(Duration.ofSeconds(5)));
                             return completeOKWithFutute(result, Jackson.marshaller());
                         })),
                 post(

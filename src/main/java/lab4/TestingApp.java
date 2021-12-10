@@ -61,9 +61,9 @@ public class TestingApp {
                             return completeOKWithFutute(result, Jackson.marshaller());
                         })),
                 post(
-                        () - > entity(Jackson.unmarshaller(.class)) msg -> {
+                        () -> entity(Jackson.unmarshaller(.class)) msg -> {
                             router.tell(msg, ActorRef.noSender());
-                            return  complete
+                            return  complete("Start test");
                     }
                 )
         );

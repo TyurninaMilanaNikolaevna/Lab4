@@ -12,6 +12,8 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import java.util.concurrent.CompletionStage;
+
 public class TestingApp {
 
     private ActorRef router;
@@ -32,7 +34,7 @@ public class TestingApp {
         final Flow<HttpResponse, HttpRequest, NotUsed>
                 flow = instance.createRoute().flow(system, actorMaterializer);
 
-        final 
+        final CompletionStage<>
 
     }
 

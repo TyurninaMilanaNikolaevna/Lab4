@@ -6,6 +6,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpRequest;
 import akka.stream.ActorMaterializer;
 
 public class TestingApp {
@@ -25,7 +26,7 @@ public class TestingApp {
 
         TestingApp instance = new TestingApp(router);
 
-        final Flow<>
+        final Flow<HttpRequest, >
 
     }
 }

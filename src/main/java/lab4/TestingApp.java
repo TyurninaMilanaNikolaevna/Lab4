@@ -35,7 +35,7 @@ public class TestingApp {
         final Flow<HttpResponse, HttpRequest, NotUsed>
                 flow = instance.createRoute().flow(system, actorMaterializer);
 
-        final CompletionStage<ServerBinding> bindingCompletionStage = 
+        final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle()
 
     }
 

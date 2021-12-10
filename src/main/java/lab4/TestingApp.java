@@ -42,7 +42,7 @@ public class TestingApp {
                 actorMaterializer
         );
 
-        System.out.println("");
+        System.out.println("Listening in port: 8080 ");
 
 
 

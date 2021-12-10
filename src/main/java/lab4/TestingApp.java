@@ -1,6 +1,6 @@
 package lab4;
 
-public class TestingApp<ActorRef> {
+public class TestingApp {
 
     private ActorRef router;
 

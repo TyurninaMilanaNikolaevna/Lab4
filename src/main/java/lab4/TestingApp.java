@@ -61,7 +61,7 @@ public class TestingApp {
                             return completeOKWithFutute(result, Jackson.marshaller());
                         })),
                 post(
-                        
+                        () - > ent
                 )
         );
     }

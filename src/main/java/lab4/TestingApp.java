@@ -56,7 +56,7 @@ public class TestingApp {
                 get(
                         () -> parameter("packageId", (id) -> {
                             Future<Object> result
-                                    = Patterns.ask(RouterActor, new GetRequest(id), Timeout.durationToTimeout(5))
+                                    = Patterns.ask(RouterActor, new GetRequest(id), Timeout.durationToTimeout(5));
                         })
                 )
                 post(

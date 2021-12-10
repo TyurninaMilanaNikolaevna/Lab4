@@ -25,7 +25,6 @@ import java.util.regex.Pattern;
 public class TestingApp {
 
     private ActorRef router;
-    private Object RouterActor;
 
     public TestingApp(ActorRef router) {
         this.router = router;
@@ -62,7 +61,7 @@ public class TestingApp {
                             return completeOKWithFutute(result, Jackson.marshaller());
                         })),
                 post(
-
+                        
                 )
         );
     }

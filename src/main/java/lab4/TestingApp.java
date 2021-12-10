@@ -12,6 +12,10 @@ public class TestingApp {
 
     private ActorRef router;
 
+    public TestingApp(ActorRef router) {
+        this.router = router;
+    }
+
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");
         ActorRef router = system.actorOf(Props.create(RouterActor.class));
@@ -21,6 +25,7 @@ public class TestingApp {
 
         TestingApp instance = new TestingApp(router);
 
+        
 
     }
 }

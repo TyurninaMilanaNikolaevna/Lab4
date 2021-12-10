@@ -33,7 +33,4 @@ public class TestingApp {
                 flow = instance.createRoute().flow(system, actorMaterializer);
 
     }
-
-    private IncomingConnection createRoute() {
-    }
 }

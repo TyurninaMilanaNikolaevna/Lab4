@@ -50,7 +50,7 @@ public class TestingApp {
     private Route createRoute(ActorSystem actorSystem) {
         return route(
                 get(
-                        () -> parameter("packageId", (id))
+                        () -> parameter("packageId", (id) -> )
                 )
                 post(
 

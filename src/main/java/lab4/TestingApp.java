@@ -7,10 +7,10 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
-import akka.http.javadsl.IncomingConnection;
 import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
+import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
@@ -33,15 +33,21 @@ public class TestingApp {
 
         TestingApp instance = new TestingApp(router);
 
-        final Flow<HttpResponse, HttpRequest, NotUsed>
-                flow = instance.createRoute().flow(system, actorMaterializer);
+        final Flow<HttpRequest, HttpResponse, NotUsed>
+                routeFlow = instance.createRoute().flow(system, actorMaterializer);
 
         final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(
-                flow,
+                routeFlow,
                 ConnectHttp.toHost("localhost", 8080),
-                
-        )
+                actorMaterializer
+        );
 
+        
+
+    }
+
+    private Route createRoute() {
+        return null;
     }
 
 }

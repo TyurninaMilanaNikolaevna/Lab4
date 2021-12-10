@@ -54,7 +54,7 @@ public class TestingApp {
         return route(
                 get(
                         () -> parameter("packageId", (id) -> {
-                            Future<Object> res = Patterns.ask(RouterActor, new )
+                            Future<Object> res = Patterns.ask(RouterActor, new GetRequest)
                         })
                 )
                 post(

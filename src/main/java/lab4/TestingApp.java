@@ -27,7 +27,8 @@ public class TestingApp {
 
         TestingApp instance = new TestingApp(router);
 
-        final Flow<HttpRequest, HttpResponse, NotUsed> flow = instance.createRoute()
+        final Flow<HttpRequest, HttpResponse, NotUsed>
+                flow = instance.createRoute().flow(system, actorMaterializer);
 
     }
 }

@@ -1,8 +1,8 @@
 package lab4;
 
-public class TestingApp {
+public class TestingApp<ActorRef> {
 
-    private     
+    private ActorRef router;
 
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("lab4");

@@ -25,7 +25,7 @@ public class TestingApp {
 
         TestingApp instance = new TestingApp(router);
 
-        final 
+        final Flow<>
 
     }
 }

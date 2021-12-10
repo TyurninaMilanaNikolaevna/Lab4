@@ -17,7 +17,8 @@ public class TestingApp {
         ActorRef router = system.actorOf(Props.create(RouterActor.class));
 
         final Http http = Http.get(system);
-        final ActorMaterializer actorMaterializer 
+        final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
+        
 
     }
 }

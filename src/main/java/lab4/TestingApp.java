@@ -19,7 +19,8 @@ public class TestingApp {
         final Http http = Http.get(system);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
 
-        TestingApp instance = new TestingApp()
+        TestingApp instance = new TestingApp(router);
+
 
     }
 }

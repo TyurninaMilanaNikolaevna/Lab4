@@ -15,6 +15,7 @@ import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.util.Timeout;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
@@ -54,7 +55,8 @@ public class TestingApp {
         return route(
                 get(
                         () -> parameter("packageId", (id) -> {
-                            Future<Object> res = Patterns.ask(RouterActor, new GetRequest(packageId, ))
+                            Future<Object> result
+                                    = Patterns.ask(RouterActor, new GetRequest(id), Timeout.durationToTimeout(5))
                         })
                 )
                 post(

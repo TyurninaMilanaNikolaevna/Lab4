@@ -6,9 +6,11 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.IncomingConnection;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
+import akka.stream.javadsl.Flow;
 
 public class TestingApp {
 
@@ -30,5 +32,8 @@ public class TestingApp {
         final Flow<HttpRequest, HttpResponse, NotUsed>
                 flow = instance.createRoute().flow(system, actorMaterializer);
 
+    }
+
+    private IncomingConnection createRoute() {
     }
 }

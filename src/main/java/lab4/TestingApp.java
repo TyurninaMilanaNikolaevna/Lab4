@@ -49,7 +49,8 @@ public class TestingApp {
 
     private Route createRoute(ActorSystem actorSystem) {
         return route(
-                
+                get()
+                post()
         );
     }
 

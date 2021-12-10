@@ -62,7 +62,7 @@ public class TestingApp {
                         })),
                 post(
                         () - > entity(Jackson.unmarshaller(.class)) msg -> {
-                            router.tell();
+                            router.tell(msg, );
                     }
                 )
         );

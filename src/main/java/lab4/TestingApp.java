@@ -12,11 +12,13 @@ import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
 import java.util.concurrent.CompletionStage;
+import java.util.regex.Pattern;
 
 public class TestingApp {
 
@@ -52,7 +54,7 @@ public class TestingApp {
         return route(
                 get(
                         () -> parameter("packageId", (id) -> {
-                            Future<Object> res = 
+                            Future<Object> res = Patterns.ask
                         })
                 )
                 post(

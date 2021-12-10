@@ -63,6 +63,7 @@ public class TestingApp {
                 post(
                         () - > entity(Jackson.unmarshaller(.class)) msg -> {
                             router.tell(msg, ActorRef.noSender());
+                            return  complete
                     }
                 )
         );

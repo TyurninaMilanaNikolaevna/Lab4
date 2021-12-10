@@ -1,3 +1,4 @@
 package lab4;
 
-public 
+public class TestingApp {
+}

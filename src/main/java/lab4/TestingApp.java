@@ -27,7 +27,7 @@ public class TestingApp {
 
         TestingApp instance = new TestingApp(router);
 
-        final Flow<HttpRequest, HttpResponse, NotUsed>
+        final Flow<HttpRequest, HttpResponse, NotUsed> flow = 
 
     }
 }

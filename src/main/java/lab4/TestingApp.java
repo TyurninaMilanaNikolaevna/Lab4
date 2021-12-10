@@ -57,6 +57,7 @@ public class TestingApp {
                         () -> parameter("packageId", (id) -> {
                             Future<Object> result
                                     = Patterns.ask(RouterActor, new GetRequest(id), Timeout.durationToTimeout(5));
+                            return compl
                         })
                 )
                 post(

@@ -14,6 +14,7 @@ import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 public class TestingApp {
@@ -24,7 +25,7 @@ public class TestingApp {
         this.router = router;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("lab4");
         ActorRef router = system.actorOf(Props.create(RouterActor.class));
 
@@ -43,6 +44,8 @@ public class TestingApp {
         );
 
         System.out.println("Listening in port: 8080 ");
+        System.in.read();
+
 
 
 

@@ -52,16 +52,13 @@ public class TestingApp {
         System.in.read();
     }
 
-    private Route createRoute() {
-    }
-
     private Route createRoute(ActorSystem actorSystem) {
         return route(
                 get(
                         () -> parameter("packageId", (id) -> {
                             Future<Object> result
                                     = Patterns.ask(RouterActor, new GetRequest(id), Timeout.durationToTimeout(5));
-                            return completeOKWithFutute(result, Jackson.marshaller())
+                            return completeOKWithFutute(result, Jackson.marshaller());
                         })),
                 )
                 post(

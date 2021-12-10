@@ -7,6 +7,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.IncomingConnection;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
@@ -34,7 +35,7 @@ public class TestingApp {
         final Flow<HttpResponse, HttpRequest, NotUsed>
                 flow = instance.createRoute().flow(system, actorMaterializer);
 
-        final CompletionStage<>
+        final CompletionStage<ServerBinding> 
 
     }
 

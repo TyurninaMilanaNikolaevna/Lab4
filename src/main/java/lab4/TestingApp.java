@@ -61,7 +61,7 @@ public class TestingApp {
                             return completeOKWithFutute(result, Jackson.marshaller());
                         })),
                 post(
-                        () - > entity(Jackson.unmarshaller(.class))
+                        () - > entity(Jackson.unmarshaller(.class)) msg 
                 )
         );
     }

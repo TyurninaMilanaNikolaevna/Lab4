@@ -21,7 +21,8 @@ import akka.util.Timeout;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.CompletionStage;
-import java.util.regex.Pattern;
+
+import static akka.http.javadsl.server.Directives.route;
 
 public class TestingApp {
 
@@ -64,7 +65,7 @@ public class TestingApp {
                 post(
                         () -> entity(Jackson.unmarshaller(.class) msg -> {
                             router.tell(msg, ActorRef.noSender());
-                            return  complete("Start test");
+                            return complete("Start test");
                     }
                 )
         );

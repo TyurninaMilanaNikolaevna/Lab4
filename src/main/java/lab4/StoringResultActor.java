@@ -1,15 +1,15 @@
 package lab4;
 
-import akka.actor.AbstractActor;
-import akka.japi.pf.ReceiveBuilder;
+import java.util.HashMap;
+import java.util.Map;
 
-public class StoringResultActor extends AbstractActor{
-    @Override
-    public Receive createReceive() {
-        return ReceiveBuilder.create()
-                .match(Testing.class, message -> {
-                    testing.setReceivedResult(execute(test));
-                    sender().tell(testing, self())
-                })
+public class StoringResultActor {
+    private final Map<String, Map<String, String>> storingResult = new HashMap<>();
+
+    private static class Result {
+        String testName;
+        String result;
     }
+
+    
 }

@@ -14,5 +14,7 @@ public class PostRequest {
                        @JsonProperty("testings") ArrayList<Testing> testings) {
         this.testings = testings;
 
+        
+
     }
 }

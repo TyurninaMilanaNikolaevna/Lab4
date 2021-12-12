@@ -9,7 +9,10 @@ public class PostRequest {
     ArrayList<Testing> testings;
 
     public PostRequest(@JsonProperty("packageId") String packageId,
-                       @JsonProperty()) {
+                       @JsonProperty("jsScript") String jsScript,
+                       @JsonProperty("functionName") String finctionName,
+                       @JsonProperty("testings") ArrayList<Testing> testings) {
+        this.testings = testings;
 
     }
 }

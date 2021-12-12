@@ -2,7 +2,9 @@ package lab4;
 
 import akka.actor.AbstractActor;
 
-public class StoringResultActor {
+public class StoringResultActor extends AbstractActor{
     @Override
-    public AbstractActor.Receive createReceive()
+    public Receive createReceive() {
+        
+    }
 }

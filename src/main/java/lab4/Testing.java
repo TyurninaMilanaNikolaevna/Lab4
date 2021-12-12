@@ -7,5 +7,7 @@ public class Testing {
     private String expectedResult;
     private ArrayList<Object> parameters;
 
-    
+    public Testing() {
+
+    }
 }

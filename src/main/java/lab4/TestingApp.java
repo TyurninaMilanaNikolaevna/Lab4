@@ -62,7 +62,7 @@ public class TestingApp {
                         () -> parameter("packageId", (id) -> {
                             Future<Object> result = Patterns.ask(router, new GetRequest(id),
                                     Timeout.create(Duration.ofSeconds(5)));
-                            return completeOKWithFutute(result, Jackson.marshaller());
+                            return completeOKWithFuture(result, Jackson.marshaller());
                         })),
                 post(
                         () -> entity(Jackson.unmarshaller(PostRequest.class), msg -> {
@@ -71,5 +71,4 @@ public class TestingApp {
                     }
                 )));
     }
-
 }

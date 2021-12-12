@@ -17,7 +17,17 @@ public class Testing {
         this.parameters = parameters;
     }
 
+    public String getTestName() {
+        return testName;
+    }
+
+    public String getExpectedResult() {
+        return expectedResult;
+    }
+
+    public ArrayList<Object> getParameters() {
+        return parameters;
+    }
+
     
-
-
 }

@@ -6,5 +6,7 @@ public class PostRequest {
 
     ArrayList<Testing> testings;
 
-    
+    public PostRequest() {
+        
+    }
 }

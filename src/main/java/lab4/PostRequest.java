@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class PostRequest {
 
     ArrayList<Testing> testings;
-    
+    private  int packageId;
+    private 
 
     public PostRequest(@JsonProperty("packageId") String packageId,
                        @JsonProperty("jsScript") String jsScript,

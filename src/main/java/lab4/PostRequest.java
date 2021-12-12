@@ -8,14 +8,16 @@ public class PostRequest {
 
     ArrayList<Testing> testings;
     private  int packageId;
-    private String jsString;
-    private String
+    private String jsScript;
+    private String functionName;
 
-    public PostRequest(@JsonProperty("packageId") String packageId,
+    public PostRequest(@JsonProperty("packageId") int packageId,
                        @JsonProperty("jsScript") String jsScript,
-                       @JsonProperty("functionName") String finctionName,
+                       @JsonProperty("functionName") String functionName,
                        @JsonProperty("testings") ArrayList<Testing> testings) {
-        this.
+        this.packageId = packageId;
+        this.jsScript = jsScript;
+        this.functionName = functionName;
 
 
 

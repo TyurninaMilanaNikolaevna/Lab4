@@ -33,5 +33,7 @@ public class PostRequest {
         return functionName;
     }
 
-    public Testing get
+    public ArrayList<Testing> getTestings() {
+        return testings;
+    }
 }

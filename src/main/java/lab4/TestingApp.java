@@ -53,7 +53,7 @@ public class TestingApp {
         System.out.println("Listening in port: 8080 ");
         System.in.read();
         bindingCompletionStage.thenCompose(ServerBinding::unbind)
-                .thenAccept(unbound -> actorSystem.ternimate());
+                .thenAccept(unbound -> actorSystem.terminate());
     }
 
     private Route createRoute() {

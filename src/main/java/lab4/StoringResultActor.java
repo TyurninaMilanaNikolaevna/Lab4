@@ -8,7 +8,7 @@ public class StoringResultActor extends AbstractActor{
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(Testing.class, message -> {
-                    testing.setReceivedResult()
+                    testing.setReceivedResult(execute(test));
                     sender().tell(testing, self())
                 })
     }

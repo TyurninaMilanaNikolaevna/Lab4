@@ -7,7 +7,7 @@ public class GetRequest {
         this.packageId = packageId;
     }
 
-    public String getPackageId() {ternimate
+    public String getPackageId() {
         return packageId;
     }
 }

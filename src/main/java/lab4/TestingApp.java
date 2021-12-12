@@ -60,8 +60,7 @@ public class TestingApp {
         return route(
                 get(
                         () -> parameter("packageId", (id) -> {
-                            Future<Object> result
-                                    = Patterns.ask(RouterActor.class, new GetRequest(id), Timeout.create(Duration.ofSeconds(5)));
+                            Future<Object> result = Patterns.ask(RouterActor.class, new GetRequest(id), Timeout.create(Duration.ofSeconds(5)));
                             return completeOKWithFutute(result, Jackson.marshaller());
                         })),
                 post(

@@ -33,16 +33,16 @@ public class TestingApp {
     }
 
     public static void main(String[] args) throws IOException {
-        ActorSystem system = ActorSystem.create("lab4");
-        ActorRef router = system.actorOf(Props.create(RouterActor.class));
+        ActorSystem actorSystem = ActorSystem.create("lab4");
+        ActorRef router = actorSystem.actorOf(Props.create(RouterActor.class));
 
-        final Http http = Http.get(system);
-        final ActorMaterializer actorMaterializer = ActorMaterializer.create(system);
+        final Http http = Http.get(actorSystem);
+        final ActorMaterializer actorMaterializer = ActorMaterializer.create(actorSystem);
 
         TestingApp instance = new TestingApp(router);
 
         final Flow<HttpRequest, HttpResponse, NotUsed>
-                routeFlow = instance.createRoute().flow(system, actorMaterializer);
+                routeFlow = instance.createRoute().flow(actorSystem, actorMaterializer);
 
         final CompletionStage<ServerBinding> bindingCompletionStage = http.bindAndHandle(
                 routeFlow,
@@ -52,7 +52,8 @@ public class TestingApp {
 
         System.out.println("Listening in port: 8080 ");
         System.in.read();
-        binding
+        bindingCompletionStage.thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> actorSystem.ternimate());
     }
 
     private Route createRoute() {

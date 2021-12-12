@@ -8,7 +8,8 @@ public class PostRequest {
 
     ArrayList<Testing> testings;
     private  int packageId;
-    private 
+    private String jsString;
+    private String
 
     public PostRequest(@JsonProperty("packageId") String packageId,
                        @JsonProperty("jsScript") String jsScript,

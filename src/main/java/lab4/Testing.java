@@ -1,5 +1,7 @@
 package lab4;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 
 public class Testing {
@@ -7,7 +9,7 @@ public class Testing {
     private String expectedResult;
     private ArrayList<Object> parameters;
 
-    public Testing() {
+    public Testing(@JsonProperty("")) {
 
     }
 }

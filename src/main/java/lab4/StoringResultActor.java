@@ -7,6 +7,6 @@ public class StoringResultActor extends AbstractActor{
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match()
+                .match(Executed.class )
     }
 }

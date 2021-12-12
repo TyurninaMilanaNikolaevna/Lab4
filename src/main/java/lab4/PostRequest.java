@@ -5,5 +5,6 @@ import java.util.ArrayList;
 public class PostRequest {
 
     ArrayList<Testing> testings;
-    
+
+    public 
 }

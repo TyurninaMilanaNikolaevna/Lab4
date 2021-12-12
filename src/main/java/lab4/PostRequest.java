@@ -19,9 +19,19 @@ public class PostRequest {
         this.jsScript = jsScript;
         this.functionName = functionName;
         this.testings = testings;
-
-        
-
-
     }
+
+    public int getPackageId() {
+        return packageId;
+    }
+
+    public String getJsScript() {
+        return jsScript;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public Testing get
 }

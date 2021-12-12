@@ -2,5 +2,6 @@ package lab4;
 
 public class GetRequest {
 
-    private final packageId 
+    private final String packageId;
+
 }

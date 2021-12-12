@@ -29,5 +29,6 @@ public class Testing {
         return parameters;
     }
 
-    String 
+    String receiveResult;
+    
 }

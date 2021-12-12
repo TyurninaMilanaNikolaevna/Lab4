@@ -9,7 +9,15 @@ public class Testing {
     private String expectedResult;
     private ArrayList<Object> parameters;
 
-    public Testing(@JsonProperty("")) {
-
+    public Testing(@JsonProperty("testName") String testName,
+                   @JsonProperty("expectedResult") String expectedResult,
+                   @JsonProperty("parameters") ArrayList<Object> parameters) {
+        this.testName = testName;
+        this.expectedResult = expectedResult;
+        this.parameters = parameters;
     }
+
+    
+
+
 }

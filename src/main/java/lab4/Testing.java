@@ -30,5 +30,12 @@ public class Testing {
     }
 
     String receiveResult;
-    
+
+    public void setReceiveResult(String receiveResult) {
+        this.receiveResult = receiveResult;
+    }
+
+    public String getReceiveResult(){
+        return receiveResult;
+    }
 }

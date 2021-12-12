@@ -52,6 +52,7 @@ public class TestingApp {
 
         System.out.println("Listening in port: 8080 ");
         System.in.read();
+        binding
     }
 
     private Route createRoute() {

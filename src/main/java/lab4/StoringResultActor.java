@@ -7,6 +7,6 @@ public class StoringResultActor extends AbstractActor{
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(Testing.class, message -> sender().tell(new Result ))
+                .match(Testing.class, message -> sender().tell(new Result(message.getPackageId())))
     }
 }

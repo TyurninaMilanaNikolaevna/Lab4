@@ -18,7 +18,7 @@ public class PostRequest {
         this.packageId = packageId;
         this.jsScript = jsScript;
         this.functionName = functionName;
-
+        this.testings = testings;
 
 
     }

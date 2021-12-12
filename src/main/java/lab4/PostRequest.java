@@ -4,5 +4,6 @@ import java.util.ArrayList;
 
 public class PostRequest {
 
-    ArrayList<Test>
+    ArrayList<Testing> testings;
+    
 }

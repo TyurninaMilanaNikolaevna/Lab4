@@ -35,7 +35,7 @@ public class Testing {
         this.currentResult = currentResult;
     }
 
-    public String setCurrentResult(){
+    public String geturrentResult(){
         return currentResult;
     }
 

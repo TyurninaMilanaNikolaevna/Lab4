@@ -7,13 +7,13 @@ public class StoringResultActor {
     private final Map<String, Map<String, String>> storingResult = new HashMap<>();
 
     private void T (Testing testing) {
-        Map<String, String> results = storingResult.get(testing.getPackageId());
-        if (results == null) results = new HashMap<>();
+        Map<String, String> storingResults = storingResult.get(testing.getPackageId());
+        if (storingResults == null) storingResults = new HashMap<>();
 
         String result;
         if (testing.geturrentResult().equals(testing.getExpectedResult()))
-            result = "RESULTS ARE EQUAL! SUCCESS";
-
+            result = "CURRENT RESULT AND EXPECTED RESULT ARE EQUAL! SUCCESS";
+        else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! "
     }
 
 

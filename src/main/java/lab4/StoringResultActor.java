@@ -8,7 +8,9 @@ public class StoringResultActor {
 
     private void T (Testing testing) {
         Map<String, String> results = storingResult.get(testing.getPackageId());
-        if (results == null) results = 
+        if (results == null) results = new HashMap<>();
+
+        String result = (testing.get)
     }
 
 

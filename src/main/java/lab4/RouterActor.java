@@ -10,7 +10,7 @@ public class RouterActor {
     public RouterActor() {
         storingResultActor = getContext().actorOf(Props.create(StoringResultActor.class));
 
-    if ()
+    
 
     }
 }

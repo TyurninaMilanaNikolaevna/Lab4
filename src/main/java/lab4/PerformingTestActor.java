@@ -6,7 +6,6 @@ import akka.japi.pf.ReceiveBuilder;
 import javax.script.*;
 
 public class PerformingTestActor extends AbstractActor {
-
     public class StoringResultActor {
         public String performingTest(Testing testing) throws ScriptException, NoSuchMethodException {
             ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
@@ -26,6 +25,5 @@ public class PerformingTestActor extends AbstractActor {
                         sender().tell(message, self());
                     }).build();
         }
-
     }
 }

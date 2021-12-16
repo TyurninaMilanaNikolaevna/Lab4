@@ -1,5 +1,6 @@
 package lab4;
 
+import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.routing.Routee;
@@ -7,7 +8,7 @@ import akka.routing.Routee;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RouterActor {
+public class RouterActor extends AbstractActor {
 
     private final int CONST = 10;
     private final ActorRef storingResultActor;
@@ -17,7 +18,7 @@ public class RouterActor {
 
         List<Routee> routees = new ArrayList<>();
         for (int i = 0; i < CONST; i++) {
-            ActorRef 
+            ActorRef performingResultActor = getContext();
         }
 
     }

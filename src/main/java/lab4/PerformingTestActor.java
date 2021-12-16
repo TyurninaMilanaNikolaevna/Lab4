@@ -19,7 +19,7 @@ public class PerformingTestActor {
         }
 
         public String perform(Testing testing) {
-            ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("")
+            ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("nashorn")
 
                 @Override
                 public Object eval(Reader reader, ScriptContext context) throws ScriptException {

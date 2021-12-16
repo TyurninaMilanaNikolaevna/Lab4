@@ -26,6 +26,8 @@ import static akka.http.javadsl.server.Directives.*;
 
 public class TestingApp {
 
+    private static final int TIME_OUT_LIMIT = 5;
+
     private ActorRef router;
 
     public TestingApp(ActorRef router) {
@@ -50,7 +52,7 @@ public class TestingApp {
                 actorMaterializer
         );
 
-        System.out.println("Listening in port: 8080 ");
+        System.out.println("Listening in port: 8080");
         System.in.read();
         bindingCompletionStage.thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> actorSystem.terminate());
@@ -61,7 +63,7 @@ public class TestingApp {
                 get(
                         () -> parameter("packageId", (id) -> {
                             Future<Object> result = Patterns.ask(router, new GetRequest(id),
-                                    Timeout.create(Duration.ofSeconds(5)));
+                                    Timeout.create(Duration.ofSeconds(TIME_OUT_LIMIT)));
                             return completeOKWithFuture(result, Jackson.marshaller());
                         })),
                 post(

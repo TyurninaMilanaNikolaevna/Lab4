@@ -11,5 +11,5 @@ public class StoringResultActor {
         String result;
     }
 
-    
+
 }

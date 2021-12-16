@@ -18,14 +18,14 @@ public class PerformingTestActor {
                     })
         }
 
-        public String performingTest(Testing testing) throws ScriptException {
+        public String performingTest(Testing testing) throws ScriptException, NoSuchMethodException {
             ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
             scriptEngine.eval(testing.getJsScript());
             Invocable invocable = (Invocable) scriptEngine;
 
-            String testResult = invocable.invokeFunction()
-            return invocable.invokeFunction()
-
+            String testResult = invocable.invokeFunction(testing.getFunctionName(),
+                    testing.getParameters().toArray()).toString();
+            return testResult;
         }
     }
 }

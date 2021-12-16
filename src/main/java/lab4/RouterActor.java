@@ -9,13 +9,15 @@ import java.util.List;
 
 public class RouterActor {
 
+    private final int CONST = 10;
+
     private final ActorRef storingResultActor;
 
     public RouterActor() {
         storingResultActor = getContext().actorOf(Props.create(StoringResultActor.class));
 
         List<Routee> routees = new ArrayList<>();
-
+        for 
 
     }
 }

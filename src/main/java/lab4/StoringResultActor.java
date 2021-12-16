@@ -1,12 +1,14 @@
 package lab4;
 
+import akka.actor.AbstractActor;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class StoringResultActor {
+public class StoringResultActor extends AbstractActor {
     private final Map<String, Map<String, String>> storingResult = new HashMap<>();
 
-    private void  (Testing testing) {
+    private void T (Testing testing) {
         Map<String, String> storingResults = storingResult.get(testing.getPackageId());
         if (storingResults == null) storingResults = new HashMap<>();
 
@@ -16,5 +18,7 @@ public class StoringResultActor {
         else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!"
     }
 
+    @Override
+    public Receive create
 
 }

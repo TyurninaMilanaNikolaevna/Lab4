@@ -4,7 +4,6 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.*;
-import java.io.Reader;
 
 public class PerformingTestActor {
 

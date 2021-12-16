@@ -19,6 +19,8 @@ public class PostRequest {
         this.jsScript = jsScript;
         this.functionName = functionName;
         this.testings = testings;
+
+        
     }
 
     public int getPackageId() {

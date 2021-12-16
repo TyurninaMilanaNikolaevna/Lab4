@@ -38,4 +38,8 @@ public class Testing {
     public String getReceiveResult(){
         return receiveResult;
     }
+
+    public String getPackageId() {
+        return p
+    }
 }

@@ -17,7 +17,7 @@ public class StoringResultActor extends AbstractActor {
         String result;
         if (testing.geturrentResult().equals(testing.getExpectedResult()))
             result = "CURRENT RESULT AND EXPECTED RESULT ARE EQUAL! SUCCESS";
-        else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!"
+        else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!";
     }
 
     @Override
@@ -27,10 +27,8 @@ public class StoringResultActor extends AbstractActor {
                 .match(GetRequest.class, getRequest -> {
                     Map<String, String> storingResults = storingResult.get(getRequest.getPackageId());
                     if (storingResults == null) storingResults = new HashMap<>();
-                }
-                sender().tell(storingResults,  ActorRef.noSender());
-                )
+                sender().tell(storingResults,  ActorRef.noSender());})
+                .match(Testing.class, this::T)
                 .build();
     }
-
 }

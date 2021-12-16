@@ -40,8 +40,31 @@ public class Testing {
     }
 
     private String packageId;
+    private String jsScript;
+    private String functionName;
+
 
     public String getPackageId() {
         return packageId;
+    }
+
+    public String getJsScript() {
+        return jsScript;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public void setPackageId(String packageId) {
+        this.packageId = packageId;
+    }
+
+    public void setJsScript(String jsScript) {
+        this.jsScript = jsScript;
+    }
+
+    public void setFunctionName(String functionName) {
+        this.functionName = functionName;
     }
 }

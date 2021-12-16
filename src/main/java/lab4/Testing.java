@@ -29,14 +29,14 @@ public class Testing {
         return parameters;
     }
 
-    String receiveResult;
+    String currentResult;
 
-    public void setReceiveResult(String receiveResult) {
-        this.receiveResult = receiveResult;
+    public void setCurrentResult (String currentResult) {
+        this.currentResult = currentResult;
     }
 
-    public String getReceiveResult(){
-        return receiveResult;
+    public String setCurrentResult(){
+        return currentResult;
     }
 
     private String packageId;

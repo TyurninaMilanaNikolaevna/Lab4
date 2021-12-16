@@ -28,6 +28,7 @@ public class TestingApp {
 
     private static final int TIME_OUT_LIMIT = 5;
     private  static final String START_MESSAGE = "Start Test";
+    private static final String PARAMETER_PACKAGE_ID = "packageId";
 
     private ActorRef router;
 
@@ -39,10 +40,10 @@ public class TestingApp {
         ActorSystem actorSystem = ActorSystem.create("lab4");
         ActorRef router = actorSystem.actorOf(Props.create(RouterActor.class));
 
+        TestingApp instance = new TestingApp(router);
+
         final Http http = Http.get(actorSystem);
         final ActorMaterializer actorMaterializer = ActorMaterializer.create(actorSystem);
-
-        TestingApp instance = new TestingApp(router);
 
         final Flow<HttpRequest, HttpResponse, NotUsed>
                 routeFlow = instance.createRoute().flow(actorSystem, actorMaterializer);
@@ -62,7 +63,7 @@ public class TestingApp {
     private Route createRoute() {
         return route(
                 get(
-                        () -> parameter("packageId", (id) -> {
+                        () -> parameter(PARAMETER_PACKAGE_ID, (id) -> {
                             Future<Object> result = Patterns.ask(router, new GetRequest(id),
                                     Timeout.create(Duration.ofSeconds(TIME_OUT_LIMIT)));
                             return completeOKWithFuture(result, Jackson.marshaller());

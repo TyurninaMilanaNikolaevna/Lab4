@@ -18,12 +18,12 @@ public class PerformingTestActor {
                     })
         }
 
-        public String performingTest(Testing testing) {
+        public String performingTest(Testing testing) throws ScriptException {
             ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
 
             scriptEngine.eval(testing.getJsScript());
-            
 
+            Invocable invocable = 
 
 
         }

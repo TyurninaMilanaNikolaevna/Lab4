@@ -12,7 +12,7 @@ public class StoringResultActor {
 
         String result;
         if (testing.geturrentResult().equals(testing.getExpectedResult()))
-            result = "RESULTS ARE EQUAL! ";
+            result = "RESULTS ARE EQUAL! SUCCESS";
 
     }
 

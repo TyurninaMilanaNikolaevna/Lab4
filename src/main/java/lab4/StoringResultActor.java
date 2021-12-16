@@ -7,7 +7,7 @@ public class StoringResultActor {
     private final Map<String, Map<String, String>> storingResult = new HashMap<>();
 
     private void T (Testing testing) {
-        Map<String, String> = 
+        Map<String, String> packageResults =
     }
 
 

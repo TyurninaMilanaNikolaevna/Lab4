@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.routing.ActorRefRoutee;
+import akka.routing.RoundRobinRoutingLogic;
 import akka.routing.Routee;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class RouterActor extends AbstractActor {
                     actorOf(Props.create(PerformingTestActor.class));
             routees.add(new ActorRefRoutee(performingResultActor));
         }
-        performingTestRouter = new Router(new );
+        performingTestRouter = new Router(new RoundRobinRoutingLogic());
     }
 
     private void performingTest(PostRequest postRequest) {

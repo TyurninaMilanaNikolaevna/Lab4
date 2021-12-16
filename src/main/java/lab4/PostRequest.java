@@ -20,19 +20,8 @@ public class PostRequest {
         this.functionName = functionName;
         this.testings = testings;
 
+        this.packageId.setPackageId();
         
-    }
-
-    public int getPackageId() {
-        return packageId;
-    }
-
-    public String getJsScript() {
-        return jsScript;
-    }
-
-    public String getFunctionName() {
-        return functionName;
     }
 
     public ArrayList<Testing> getTestings() {

@@ -15,5 +15,6 @@ public class StoringResultActor {
             result = "CURRENT RESULT AND EXPECTED RESULT ARE EQUAL! SUCCESS";
         else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!"
     }
+
     
 }

@@ -6,7 +6,7 @@ import java.util.Map;
 public class StoringResultActor {
     private final Map<String, Map<String, String>> storingResult = new HashMap<>();
 
-    private void T (Testing testing) {
+    private void  (Testing testing) {
         Map<String, String> storingResults = storingResult.get(testing.getPackageId());
         if (storingResults == null) storingResults = new HashMap<>();
 
@@ -16,5 +16,5 @@ public class StoringResultActor {
         else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!"
     }
 
-    
+
 }

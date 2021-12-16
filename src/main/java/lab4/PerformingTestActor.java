@@ -13,8 +13,7 @@ public class PerformingTestActor {
         public Receive createReceive() {
             return ReceiveBuilder.create()
                     .match(Testing.class, message -> {
-                        testing.setReceivedResult(execute(test));
-                        sender().tell(testing, self())
+                        StoringResultActor.tell(testing, self())
                     })
         }
 

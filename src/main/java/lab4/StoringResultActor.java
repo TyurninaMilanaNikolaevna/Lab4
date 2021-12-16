@@ -13,8 +13,7 @@ public class StoringResultActor {
         String result;
         if (testing.geturrentResult().equals(testing.getExpectedResult()))
             result = "CURRENT RESULT AND EXPECTED RESULT ARE EQUAL! SUCCESS";
-        else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! "
+        else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!"
     }
-
-
+    
 }

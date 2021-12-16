@@ -11,7 +11,7 @@ public class PostRequest {
     public PostRequest(@JsonProperty("packageId") String packageId,
                        @JsonProperty("jsScript") String jsScript,
                        @JsonProperty("functionName") String functionName,
-                       @JsonProperty("testings") ArrayList<Testing> testings) {
+                       @JsonProperty("tests") ArrayList<Testing> testings) {
         this.testings = testings;
 
         for (Testing testing : this.testings) {

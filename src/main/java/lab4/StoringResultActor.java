@@ -15,7 +15,7 @@ public class StoringResultActor extends AbstractActor {
         if (storingResults == null) storingResults = new HashMap<>();
 
         String result;
-        if (testing.getСurrentResult().equals(testing.getExpectedResult()))
+        if (testing.getCurrentResult().equals(testing.getExpectedResult()))
             result = "CURRENT RESULT AND EXPECTED RESULT ARE EQUAL! SUCCESS";
         else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!";
 

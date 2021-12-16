@@ -27,6 +27,7 @@ public class RouterActor extends AbstractActor {
     }
 
     private void performingTest(PostRequest postRequest) {
+        for (Testing testing : postRequest.getTestings())
 
     }
 
@@ -35,6 +36,7 @@ public class RouterActor extends AbstractActor {
         return receiveBuilder()
                 .match(PostRequest.class, postRequest -> performingTest(postRequest))
                 .match(GetRequest.class, getRequest -> {
-                    storingResultActor.tell(getRequest, sender());).build();
+                    storingResultActor.tell(getRequest, sender());
+                }).build();
     }
 }

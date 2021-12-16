@@ -31,9 +31,8 @@ public class RouterActor extends AbstractActor {
 
     private void performingTest(PostRequest postRequest) {
         for (Testing testing : postRequest.getTestings()) {
-            performingTestRouter.route(testing, );
+            performingTestRouter.route(testing, storingResultActor);
         }
-
     }
 
     @Override

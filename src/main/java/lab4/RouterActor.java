@@ -6,6 +6,7 @@ import akka.actor.Props;
 import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
 import akka.routing.Routee;
+import akka.routing.Router;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ public class RouterActor extends AbstractActor {
 
     private final int CONST = 10;
     private final ActorRef storingResultActor;
+    private final Router performingTestRouter;
 
     public RouterActor() {
         storingResultActor = getContext().actorOf(Props.create(StoringResultActor.class));
@@ -24,12 +26,12 @@ public class RouterActor extends AbstractActor {
                     actorOf(Props.create(PerformingTestActor.class));
             routees.add(new ActorRefRoutee(performingResultActor));
         }
-        performingTestRouter = new Router(new RoundRobinRoutingLogic());
+        performingTestRouter = new Router(new RoundRobinRoutingLogic(), routees);
     }
 
     private void performingTest(PostRequest postRequest) {
         for (Testing testing : postRequest.getTestings()) {
-            performingTestRou;
+            performingTestRouter = new Router();
         }
 
     }

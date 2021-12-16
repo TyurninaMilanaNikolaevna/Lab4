@@ -1,6 +1,7 @@
 package lab4;
 
 import akka.actor.AbstractActor;
+import akka.japi.pf.ReceiveBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +21,10 @@ public class StoringResultActor extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return 
+        return ReceiveBuilder
+                .create()
+                .match()
+                .build();
     }
 
 }

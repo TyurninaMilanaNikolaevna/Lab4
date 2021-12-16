@@ -34,7 +34,9 @@ public class RouterActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(PostRequest.class, postRequest -> performingTest(postRequest))
-                .match(GetRequest.class, )
+                .match(GetRequest.class, getRequest -> {
+                    
+                })
                 .build();
     }
 }

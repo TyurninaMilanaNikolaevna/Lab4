@@ -27,6 +27,7 @@ import static akka.http.javadsl.server.Directives.*;
 public class TestingApp {
 
     private static final int TIME_OUT_LIMIT = 5;
+    private  static final String START_MESSAGE = "Start Test";
 
     private ActorRef router;
 
@@ -67,9 +68,9 @@ public class TestingApp {
                             return completeOKWithFuture(result, Jackson.marshaller());
                         })),
                 post(
-                        () -> entity(Jackson.unmarshaller(PostRequest.class), msg -> {
-                            router.tell(msg, ActorRef.noSender());
-                            return complete("Start test");
+                        () -> entity(Jackson.unmarshaller(PostRequest.class), message -> {
+                            router.tell(message, ActorRef.noSender());
+                            return complete(START_MESSAGE);
                     }
                 )));
     }

@@ -21,7 +21,8 @@ public class PerformingTestActor {
         public String performingTest(Testing testing) {
             ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
 
-            scriptEngine.eval()
+            scriptEngine.eval(testing.getJsScript());
+            
 
 
 

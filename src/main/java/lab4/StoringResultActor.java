@@ -24,7 +24,8 @@ public class StoringResultActor extends AbstractActor {
         return ReceiveBuilder
                 .create()
                 .match(GetRequest.class, getRequest -> {
-                    Map<String, String> storingResult
+                    Map<String, String> storingResults = storingResult.get(getRequest.getPackageId());
+                    if (storingResults == null) storingResults = new HashMap<>();
                 })
                 .build();
     }

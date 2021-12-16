@@ -7,24 +7,22 @@ import javax.script.*;
 
 public class PerformingTestActor extends AbstractActor {
 
-    public class StoringesultActor {
-        public String performingTest(Testing testing) throws ScriptException, NoSuchMethodException {
-            ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
-            scriptEngine.eval(testing.getJsScript());
-            Invocable invocable = (Invocable) scriptEngine;
+    public String performingTest(Testing testing) throws ScriptException, NoSuchMethodException {
+        ScriptEngine scriptEngine = new ScriptEngineManager().getEngineByName("nashorn");
+        scriptEngine.eval(testing.getJsScript());
+        Invocable invocable = (Invocable) scriptEngine;
 
-            String testResult = invocable.invokeFunction(testing.getFunctionName(),
-                    testing.getParameters().toArray()).toString();
-            return testResult;
-        }
+        String testResult = invocable.invokeFunction(testing.getFunctionName(),
+                testing.getParameters().toArray()).toString();
+        return testResult;
+    }
 
-        @Override
-        public Receive createReceive() {
-            return ReceiveBuilder.create()
-                    .match(Testing.class, message -> {
-                        message.setCurrentResult(performingTest(message));
-                        sender().tell(message, self());
-                    }).build();
-        }
+    @Override
+    public Receive createReceive() {
+        return ReceiveBuilder.create()
+                .match(Testing.class, message -> {
+                    message.setCurrentResult(performingTest(message));
+                    sender().tell(message, self());
+                }).build();
     }
 }

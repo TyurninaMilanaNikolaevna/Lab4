@@ -39,7 +39,9 @@ public class Testing {
         return receiveResult;
     }
 
+    private String packageId;
+
     public String getPackageId() {
-        return ;
+        return packageId;
     }
 }

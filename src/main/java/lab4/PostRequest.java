@@ -20,7 +20,9 @@ public class PostRequest {
         this.functionName = functionName;
         this.testings = testings;
 
-        
+        for (int i = 0; i < testings.size(); i++) {
+            testings.set
+        }
     }
 
     public ArrayList<Testing> getTestings() {

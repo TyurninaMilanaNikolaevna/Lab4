@@ -7,7 +7,7 @@ public class RouterActor {
     private final int MAX_RETRIES = 10;
 
     public RouterActor() {
-        storingResultActor = getContext()
+        storingResultActor = getContext().actorOf
 
     }
 }

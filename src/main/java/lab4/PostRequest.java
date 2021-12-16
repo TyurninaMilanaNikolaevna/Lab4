@@ -11,7 +11,7 @@ public class PostRequest {
     private String jsScript;
     private String functionName;
 
-    public PostRequest(@JsonProperty("packageId") int packageId,
+    public PostRequest(@JsonProperty("packageId") String packageId,
                        @JsonProperty("jsScript") String jsScript,
                        @JsonProperty("functionName") String functionName,
                        @JsonProperty("testings") ArrayList<Testing> testings) {
@@ -19,6 +19,7 @@ public class PostRequest {
         this.jsScript.serJsScript(jsScript);
         this.functionName = functionName;
         this.testings = testings;
+
         
     }
 

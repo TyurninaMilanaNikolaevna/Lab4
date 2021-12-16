@@ -8,6 +8,7 @@ public class StoringResultActor {
 
     private void T (Testing testing) {
         Map<String, String> packageResults = storingResult.get(testing.getPackageId());
+        if ()
     }
 
 

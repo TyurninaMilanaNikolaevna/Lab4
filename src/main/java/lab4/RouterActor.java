@@ -2,4 +2,6 @@ package lab4;
 
 public class RouterActor {
 
+    private final int MAX_
+
 }

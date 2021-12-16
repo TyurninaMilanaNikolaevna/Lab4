@@ -19,7 +19,7 @@ public class StoringResultActor extends AbstractActor {
             result = "CURRENT RESULT AND EXPECTED RESULT ARE EQUAL! SUCCESS";
         else result = "CURRENT RESULT AND EXPECTED RESULT ARE NOT EQUAL! FAILURE!";
 
-        storingResults.put(testing.getTestName(), )
+        storingResults.put(testing.getTestName(), result);
         storingResult.put(testing.getPackageId(), storingResults);
     }
 

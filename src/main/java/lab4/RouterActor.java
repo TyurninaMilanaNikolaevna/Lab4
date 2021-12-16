@@ -23,12 +23,12 @@ public class RouterActor extends AbstractActor {
                     actorOf(Props.create(PerformingTestActor.class));
             routees.add(new ActorRefRoutee(performingResultActor));
         }
-
+        performingTestRouter = new Router(new );
     }
 
     private void performingTest(PostRequest postRequest) {
         for (Testing testing : postRequest.getTestings()) {
-            
+            performingTestRou;
         }
 
     }

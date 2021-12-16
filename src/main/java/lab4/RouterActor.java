@@ -31,7 +31,7 @@ public class RouterActor extends AbstractActor {
 
     private void performingTest(PostRequest postRequest) {
         for (Testing testing : postRequest.getTestings()) {
-            performingTestRouter = new Router();
+            performingTestRouter = ;
         }
 
     }

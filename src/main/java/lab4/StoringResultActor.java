@@ -24,7 +24,7 @@ public class StoringResultActor extends AbstractActor {
         return ReceiveBuilder
                 .create()
                 .match(GetRequest.class, getRequest -> {
-                    Map<String, String> sr
+                    Map<String, String> storingResult
                 })
                 .build();
     }

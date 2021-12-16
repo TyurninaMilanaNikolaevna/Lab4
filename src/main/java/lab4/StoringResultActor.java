@@ -10,7 +10,7 @@ public class StoringResultActor {
         Map<String, String> results = storingResult.get(testing.getPackageId());
         if (results == null) results = new HashMap<>();
 
-        String result = (testing.geturrentResult());
+        String result = (testing.geturrentResult().equals(testing.getExpectedResult()));
     }
 
 

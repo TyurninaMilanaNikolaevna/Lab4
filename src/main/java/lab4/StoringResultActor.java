@@ -19,6 +19,8 @@ public class StoringResultActor extends AbstractActor {
     }
 
     @Override
-    public Receive create
+    public Receive createReceive() {
+        return 
+    }
 
 }

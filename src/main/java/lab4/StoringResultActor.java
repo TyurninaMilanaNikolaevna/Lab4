@@ -23,7 +23,9 @@ public class StoringResultActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder
                 .create()
-                .match(GetRequest.class, getRequest -> )
+                .match(GetRequest.class, getRequest -> {
+                    Map<String, String> sr
+                })
                 .build();
     }
 

@@ -6,7 +6,7 @@ import java.util.Map;
 public class StoringResultActor {
     private final Map<String, Map<String, String>> storingResult = new HashMap<>();
 
-    
+    private 
 
 
 }

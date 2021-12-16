@@ -23,6 +23,7 @@ public class PerformingTestActor {
             scriptEngine.eval(testing.getJsScript());
             Invocable invocable = (Invocable) scriptEngine;
 
+            String testResult = invocable.invokeFunction()
             return invocable.invokeFunction()
 
         }

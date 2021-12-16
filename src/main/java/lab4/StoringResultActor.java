@@ -1,6 +1,7 @@
 package lab4;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import java.util.HashMap;
@@ -26,7 +27,9 @@ public class StoringResultActor extends AbstractActor {
                 .match(GetRequest.class, getRequest -> {
                     Map<String, String> storingResults = storingResult.get(getRequest.getPackageId());
                     if (storingResults == null) storingResults = new HashMap<>();
-                })
+                }
+                sender().tell(storingResults,  ActorRef.noSender());
+                )
                 .build();
     }
 
